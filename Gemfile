@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'semantic-ui-sass'
 gem 'bcrypt'
+gem 'byebug'
 gem 'hirb' #This is for tabular view of data
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
