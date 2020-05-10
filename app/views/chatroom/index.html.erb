@@ -7,7 +7,7 @@ Chatroom
 <div class="ui two column grid">
 <div class="twelve wide column">
 <div class="ui fluid raised card chatbox">
-<div class="content">
+<div class="content" id="messages">
 <div class="ui small feed" id="message-container">
   
         
@@ -17,7 +17,6 @@ Chatroom
   <div class="extra content">
   <%= form_for(@message,:html => {class: "ui reply form",role:"form"}, url: message_path, remote: true) do |form| %>
     
-                    
                     
                  
                     <div class="ui fluid icon input">
