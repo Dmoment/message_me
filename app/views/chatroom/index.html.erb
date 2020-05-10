@@ -8,36 +8,26 @@ Chatroom
 <div class="twelve wide column">
 <div class="ui fluid raised card chatbox">
 <div class="content">
-<div class="ui small feed">
+<div class="ui small feed" id="message-container">
   
-        <div class="event">
-        <div class="content">
-            <div class="summary">
-                
-                <% @messages.each do |mess| %>
-                    <%= mess.user.username %>: <%= mess.body %>
-                    </br>
-                     <% end %>
-            </div>
-        </div>
-        </div>
         
+        <%= render @messages %>
     </div>
   </div>
   <div class="extra content">
-  <%= form_for(@message,:html => {class: "ui reply form",role:"form"}, url: message_path) do |form| %>
+  <%= form_for(@message,:html => {class: "ui reply form",role:"form"}, url: message_path, remote: true) do |form| %>
     
-                    <div class="field">
                     
-                    </div>
+                    
+                 
                     <div class="ui fluid icon input">
                     <%= form.text_field :body %>
                  <%= form.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
                     </div>
                     <% end %>
                     </div>
-</div>
-</div>
+ </div>
+ </div>                   
 
 <div class="four wide column">
 
