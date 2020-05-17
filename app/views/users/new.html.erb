@@ -1,0 +1,30 @@
+<h1>Sign up</h1>
+<%= render 'shared/errors',obj: @user %>
+<%= form_with(model: @user, local: true,:html => {class: "ui form",role:"form"}) do |form| %>
+  
+
+  <div class="field">
+ 
+    <%= form.label :Username, class: "col-sm-2 col-form-label" %>
+    
+    <div class="col-sm-8">
+    <%= form.text_field :username,class: "form-control", placeholder: "Enter username", autofocus: true %>
+  </div>
+  </div>
+  <div class="field">
+ 
+    <%= form.label :Password, class: "col-sm-2 col-form-label" %>
+    
+    <div class="col-sm-8">
+    <%= form.password_field :password,class: "form-control", placeholder: "Enter password", autofocus: true %>
+  </div>
+  </div>
+  
+  <div class="form-group row",align="center">
+    <div class="col-sm-offset-2 col-auto">
+        <%= form.submit(@user.new_record? ? "Signup": "Update",class: "ui button") %>
+    </div>
+    </div>
+  <% end %>
+
+

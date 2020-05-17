@@ -22,6 +22,7 @@ def create
 
 end
 
+
 def destroy
     session[:user_id]=nil
     flash[:success]="You have been seccessfully logged out"
