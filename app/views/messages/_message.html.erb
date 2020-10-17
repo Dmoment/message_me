@@ -3,8 +3,27 @@
             <div class="summary">
                 
                 
-                   <em> <%= message.user.username %></em>: <%= message.body %>
-                    </br>
+                 <div class="container">
+                      
+                                <% if current_user == message.user%>
+                         <div class="message-blue">        
+                                
+                              <div class="message-content">   
+                               <p> <i class="fa fa-user-circle-o" style="font-size:48px;color:green"></i>
+                                <b> <%= message.user.username %></b></em>: <%= message.body %></p>
+                        </div>
+                        </div>
+                        
+                    <% else %> 
+                    <div class="message-orange">
+                        <div class="message-content">
+                        <em> <i class="fa fa-user-circle-o" style="font-size:48px;color:red"></i>
+                        <b><%= message.user.username %></b></em>: <%= message.body %>   
+                    </div>
+                    </div>
+                    <% end%>
+                    </div>
+                    <br/>
                     
             </div>
         </div>
